@@ -3,6 +3,25 @@
   become: true
 
   tasks:
+  - name: Create Ansible User
+    user:
+      name: ansible
+      system: yes
+
+  - name: Copy Sudoers
+    copy:
+      src: files/sudoers_ansible
+      dest: /etc/sudoers.d/ansible
+      owner: root
+      group: root
+      mode: 0440
+
+  - name: Install Cron Job
+    user: ansible
+    name: "ansible provision"
+    minute: "*/10"
+    job: "/usr/bin/ansible-pull -o -U https://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:x-oath-basic@github.com/zhaho/ansible_pull_test.git > /dev/null"
+
   - name: Setup Config
     yum:
       name: htop
