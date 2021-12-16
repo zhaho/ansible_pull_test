@@ -26,3 +26,7 @@
   - name: Setup Config
     yum:
       name: htop
+
+  - name: Setup Config2
+      yum:
+        name: httpd
