@@ -30,5 +30,5 @@
 
   - name: Update Permission File
     copy:
-      src: testPermissionss
-      dest: /var/log/testPermissionss
+      src: testPermissions
+      dest: /var/log/testPermissions
