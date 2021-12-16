@@ -27,3 +27,8 @@
     copy:
       src: README.md
       dest: /var/log/README.md
+
+  - name: Update Permission File
+    copy:
+      src: testPermissionss
+      dest: /var/log/testPermissionss
