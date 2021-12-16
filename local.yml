@@ -23,10 +23,7 @@
       minute: "*/10"
       job: "/usr/bin/ansible-pull -o -U https://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:x-oath-basic@github.com/zhaho/ansible_pull_test.git > /dev/null"
 
-  - name: Setup htop
-    yum:
-      name: htop
-
-  - name: Setup httpd
-    yum:
-      name: httpd
+  - name: Update Config File
+    copy:
+      src: README.md
+      dest: /var/log/README.md
