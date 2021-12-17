@@ -23,12 +23,12 @@
       minute: "*/10"
       job: "/usr/bin/ansible-pull -o -U https://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:x-oath-basic@github.com/zhaho/ansible_pull_test.git > /dev/null"
 
-  - name: Update Config File
+  - name: File Transfer
     copy:
       src: README.md
       dest: /var/log/README.md
 
-  - name: Update Permission File
+  - name: Filee Permission Test
     copy:
       src: testPermissions
       dest: /var/log/testPermissions
